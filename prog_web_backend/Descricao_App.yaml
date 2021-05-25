@@ -1,0 +1,283 @@
+swagger: '2.0'
+info:
+  description: >-
+    Trabalho de TecWeb, Desenvolvimento de um aplicativo que cadastre fichas de
+    clientes que se consulta na UFSJ
+  version: 1.0.0
+  title: InfoMed
+  contact:
+    email: lucasldeoliveira@gmail.com
+host: InfoMed.ufsj.edu.br
+basePath: /v1
+tags:
+  - name: Paciente
+    description: CRUD com os pacientes da clinica médica
+  - name: Consulta
+    description: CRUD com as consultas que são realizadas na clinica
+schemes:
+  - http
+paths:
+  /paciente:
+    post:
+      tags:
+        - Paciente
+      summary: Adiciona um paciente no banco de dados
+      operationId: addPaciente
+      consumes:
+        - aplication/json
+      produces:
+        - aplication/json
+      parameters:
+        - in: body
+          name: body
+          description: ' Objeto paciente a ser adicionado no banco'
+          required: true
+          schema:
+            $ref: '#/definitions/paciente'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/paciente'
+    get:
+      tags:
+        - Paciente
+      summary: Visualizar todos os pacientes no banco de dados
+      operationId: getTodosPaciente
+      produces:
+        - aplication/json
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/paciente'
+  '/paciente/{idpaciente}':
+    get:
+      tags:
+        - Paciente
+      summary: Visualizar um paciente no banco de dados pelo ID
+      operationId: getPaciente
+      produces:
+        - aplication/json
+      parameters:
+        - name: idpaciente
+          in: path
+          description: ' Id do paciente a ser exibido'
+          required: true
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/paciente'
+        '400':
+          description: Invalid ID
+        '404':
+          description: Id not found
+    put:
+      tags:
+        - Paciente
+      summary: Atualiza um paciente no banco de dados
+      operationId: updatePaciente
+      consumes:
+        - aplication/json
+      produces:
+        - aplication/json
+      parameters:
+        - in: body
+          name: body
+          description: ' Objeto paciente a ser atualizado no banco'
+          required: true
+          schema:
+            $ref: '#/definitions/paciente'
+        - name: idpaciente
+          in: path
+          description: ' Id do paciente a ser atualizado'
+          required: true
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/paciente'
+        '400':
+          description: Invalid ID
+        '404':
+          description: Id not found
+    delete:
+      tags:
+        - Paciente
+      summary: Deleta um paciente no banco de dados
+      operationId: deletePaciente
+      parameters:
+        - name: idpaciente
+          in: path
+          description: ' Id do paciente a ser excluido'
+          required: true
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Invalid ID
+        '404':
+          description: Id not found
+  /consulta:
+    get:
+      tags:
+        - Consulta
+      summary: Visualizar todas as consultas no banco de dados
+      operationId: getTodasConsulta
+      produces:
+        - aplication/json
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/consulta'
+  '/consulta/{NamePaciente/Idconsulta}':
+    post:
+      tags:
+        - Consulta
+      summary: Adiciona uma Consulta no banco de dados de acordo com o nome do paciente
+      operationId: addConsulta
+      consumes:
+        - aplication/json
+      produces:
+        - aplication/json
+      parameters:
+        - in: body
+          name: body
+          description: ' Objeto consulta a ser adicionado no banco'
+          required: true
+          schema:
+            $ref: '#/definitions/consulta'
+        - name: NamePaciente/Idconsulta
+          in: path
+          description: ' Nome do paciente que realizará a consulta'
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/consulta'
+    get:
+      tags:
+        - Consulta
+      summary: Visualizar uma consulta no banco de dados pelo ID
+      operationId: getcConsulta
+      produces:
+        - aplication/json
+      parameters:
+        - name: NamePaciente/Idconsulta
+          in: path
+          description: ' Id da consulta a ser exibida'
+          required: true
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/consulta'
+        '400':
+          description: Invalid ID
+        '404':
+          description: Id not found
+    put:
+      tags:
+        - Consulta
+      summary: Atualiza uma consulta no banco de dados
+      operationId: updateConsulta
+      consumes:
+        - aplication/json
+      produces:
+        - aplication/json
+      parameters:
+        - in: body
+          name: body
+          description: ' Objeto Consulta a ser atualizado no banco'
+          required: true
+          schema:
+            $ref: '#/definitions/consulta'
+        - name: NamePaciente/Idconsulta
+          in: path
+          description: ' Id da consulta a ser atualizada'
+          required: true
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/consulta'
+        '400':
+          description: Invalid ID
+        '404':
+          description: Id not found
+    delete:
+      tags:
+        - Consulta
+      summary: Deleta uma consulta no banco de dados
+      operationId: deleteConsulta
+      parameters:
+        - name: NamePaciente/Idconsulta
+          in: path
+          description: ' Id da consulta a ser excluida'
+          required: true
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Invalid ID
+        '404':
+          description: Id not found
+definitions:
+  paciente:
+    type: object
+    properties:
+      idpaciente:
+        type: integer
+        format: int64
+      nome_paciente:
+        type: string
+      idade_paciente":
+        type: integer
+        format: int64
+      cor_paciente:
+        type: string
+      estado_civil_paciente:
+        type: string
+      naturalidade_paciente:
+        type: string
+      procedencia_paciente:
+        type: string
+      profissão_paciente:
+        type: string
+      endereço_paciente:
+        type: string
+      telefone_paciente:
+        type: string
+      email_paciente:
+        type: string
+  consulta:
+    type: object
+    properties:
+      idconsulta:
+        type: integer
+        format: int64
+      idpaciente:
+        type: integer
+        format: int64
+      motivo_consulta:
+        type: string
+      data_consulta":
+        type: object
+      Tempo_evolucao_consulta":
+        type: string

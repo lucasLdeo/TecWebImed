@@ -1,0 +1,26 @@
+{
+  "name": "infomed",
+  "version": "1.0.0",
+  "description": "trabalho de programacao web ",
+  "main": "consulta_nos_dados.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ufsj-dcomp/projeto-pratico-tecweb---back-end-lucasLdeo.git"
+  },
+  "keywords": [
+    "lucaslt1997"
+  ],
+  "author": "Lucas lEITE",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ufsj-dcomp/projeto-pratico-tecweb---back-end-lucasLdeo/issues"
+  },
+  "homepage": "https://github.com/ufsj-dcomp/projeto-pratico-tecweb---back-end-lucasLdeo#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "jsonwebtoken": "^8.5.1"
+  }
+}
