@@ -1,0 +1,10 @@
+<mat-toolbar>  
+    <mat-toolbar-row>
+      <span> infoMed </span>
+      <a mat-button [routerLink]="'/home/paciente'"> Paciente </a>
+      <a mat-button [routerLink]="'/home/prontuario'"> Prontuario </a>
+    </mat-toolbar-row>  
+</mat-toolbar>
+<div class="container-fluid">
+  <router-outlet></router-outlet>
+</div>

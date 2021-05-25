@@ -1,0 +1,40 @@
+<div class="row justify-content-md-center">
+    <div class="col-8 align-self-center"> 
+        <h1>Prontuario</h1>
+    </div>
+</div>
+<div class="row justify-content-md-center">
+    <div class="col-8 align-self-center">       
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" width = "100%">
+            <ng-container matColumnDef="idpaciente">
+                <th mat-header-cell *matHeaderCellDef> ID Paciente</th>
+                <td mat-cell *matCellDef="let Prontuario ">{{Prontuario.idpaciente}}</td>
+            </ng-container>
+            <ng-container matColumnDef="motivo_consulta">
+                <th mat-header-cell *matHeaderCellDef> Motivo</th>
+                <td mat-cell *matCellDef="let Prontuario ">{{Prontuario.motivo_consulta}}</td>
+            </ng-container>
+            <ng-container matColumnDef="sintoma_prontuario">
+                <th mat-header-cell *matHeaderCellDef> Sintomas</th>
+                <td mat-cell *matCellDef="let Prontuario ">{{Prontuario.sintoma_prontuario}}</td>
+            </ng-container>
+            <ng-container matColumnDef="quadro_atual">
+                <th mat-header-cell *matHeaderCellDef> Quadro Atual</th>
+                <td mat-cell *matCellDef="let Prontuario ">{{Prontuario.quadro_atual}}</td>
+            </ng-container> 
+            <ng-container matColumnDef="data_consulta">
+                <th mat-header-cell *matHeaderCellDef> Data consulta</th>
+                <td mat-cell *matCellDef="let Prontuario ">{{Prontuario.data_consulta | date:"dd/MM/yyyy"}}</td>
+            </ng-container>             
+            <ng-container matColumnDef="data_prontuario">
+                <th mat-header-cell *matHeaderCellDef> Data Pront.</th>
+                <td mat-cell *matCellDef="let Prontuario ">{{Prontuario.data_prontuario | date:"dd/MM/yyyy"}}</td>
+            </ng-container> <ng-container matColumnDef="hora_prontuario">
+                <th mat-header-cell *matHeaderCellDef> Hora Pront.</th>
+                <td mat-cell *matCellDef="let Prontuario ">{{Prontuario.hora_prontuario}}</td>
+            </ng-container>                    
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let Prontuario; columns: displayedColumns"></tr>
+        </table>    
+    </div>
+</div>

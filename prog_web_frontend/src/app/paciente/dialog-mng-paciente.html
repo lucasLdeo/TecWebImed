@@ -1,0 +1,76 @@
+<h1 mat-dialog-title>Paciente</h1>
+<div mat-dialog-content>
+    <div class="row">
+        <div class="col-8">
+            <mat-form-field style="width: 100%;">
+                <mat-label>Nome:</mat-label>
+                <input matInput [(ngModel)]="data.nome_paciente">
+            </mat-form-field>
+        </div>
+        <div class="col-2">
+            <mat-form-field style="width: 100%;">
+                <mat-label>Idade:</mat-label>
+                <input matInput [(ngModel)]="data.idade_paciente">
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-2">
+            <mat-form-field style="width: 100%;">
+                <mat-label>Cor do paciente:</mat-label>
+                <input matInput [(ngModel)]="data.cor_paciente">
+            </mat-form-field>
+        </div>
+        <div class="col-2">
+            <mat-form-field style="width: 100%;">
+                <mat-label>Estado civil:</mat-label>
+                <input matInput [(ngModel)]="data.estado_civil_paciente">
+            </mat-form-field>
+        </div>
+        <div class="col-6">
+            <mat-form-field style="width: 100%;">
+                <mat-label>Naturalidade:</mat-label>
+                <input matInput [(ngModel)]="data.naturalidade_paciente">
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <mat-form-field style="width: 100%;">
+                <mat-label>Procedencia:</mat-label>
+                <input matInput [(ngModel)]="data.procedencia_paciente">
+            </mat-form-field>
+        </div>
+        <div class="col-4">
+            <mat-form-field style="width: 100%;">
+                <mat-label>Estado civil:</mat-label>
+                <input matInput [(ngModel)]="data.profissao_paciente">
+            </mat-form-field>
+        </div>        
+    </div>
+    <div class="row">
+        <div class="col-2">
+            <mat-form-field style="width: 100%;">
+                <mat-label>Telefone:</mat-label>
+                <input matInput [(ngModel)]="data.telefone_paciente">
+            </mat-form-field>
+        </div>
+        <div class="col-4">
+            <mat-form-field style="width: 100%;">
+                <mat-label>Endereço:</mat-label>
+                <input matInput [(ngModel)]="data.endereco_paciente">
+            </mat-form-field>
+        </div>
+        <div class="col-4">
+            <mat-form-field style="width: 100%;">
+                <mat-label>Email:</mat-label>
+                <input matInput [(ngModel)]="data.email_paciente">
+            </mat-form-field>
+        </div>
+    </div>
+</div>
+<div mat-dialog-action aling ="end">
+    <button mat-button (click)="onNoClick()">Cancelar</button>
+    <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Salvar</button>
+</div>
+  

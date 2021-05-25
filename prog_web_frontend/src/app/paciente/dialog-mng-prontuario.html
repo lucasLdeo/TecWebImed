@@ -1,0 +1,38 @@
+<h1 mat-dialog-title>Prontuário</h1>
+<div mat-dialog-content>
+    <div class="row">
+        <div class="col-6">
+            <mat-form-field style="width: 100%;">
+                <mat-label>Motivo:</mat-label>
+                <input matInput [(ngModel)]="data.motivo_consulta">
+            </mat-form-field>
+        </div>
+        <div class="col-6">
+            <mat-form-field style="width: 100%;">
+                <mat-label>Data consulta:</mat-label>
+                <input matInput [(ngModel)]="data.data_consulta">
+            </mat-form-field>
+        </div>
+    </div>        
+    <div class="row">
+        <div class="col-10">
+            <mat-form-field style="width: 100%;">
+                <mat-label>Sintomas:</mat-label>
+                <input matInput [(ngModel)]="data.sintoma_prontuario">
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-10">
+            <mat-form-field style="width: 100%;">
+                <mat-label>Quadro_atual:</mat-label>
+                <input matInput [(ngModel)]="data.quadro_atual">
+            </mat-form-field>
+        </div>        
+    </div>    
+</div>
+<div mat-dialog-action aling ="end">
+    <button mat-button (click)="onNoClick()">Cancelar</button>
+    <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Salvar</button>
+</div>
+  

@@ -1,0 +1,45 @@
+<div class="row justify-content-md-center">
+    <div class="col-6 align-self-center"> 
+        <h1>Pacientes</h1>
+    </div>
+    <div class="col-2 align-self-center ">
+        <button mat-stroked-button class="colorRef float-right" color="primary" (click)="openNewDialog() ">Adicionar</button>
+    </div>
+</div>
+<div class="row justify-content-md-center">
+    <div class="col-8 align-self-center">        
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" width = "100%">
+            <ng-container matColumnDef="Nome">
+                <th mat-header-cell *matHeaderCellDef> Nome</th>
+                <td mat-cell *matCellDef="let Paciente ">{{Paciente.nome_paciente}}</td>
+            </ng-container>
+            <ng-container matColumnDef="Idade">
+                <th mat-header-cell *matHeaderCellDef> Idade</th>
+                <td mat-cell *matCellDef="let Paciente ">{{Paciente.idade_paciente}}</td>
+            </ng-container>
+            <ng-container matColumnDef="Email">
+                <th mat-header-cell *matHeaderCellDef> Email</th>
+                <td mat-cell *matCellDef="let Paciente ">{{Paciente.email_paciente}}</td>
+            </ng-container>
+            <ng-container matColumnDef="Telefone">
+                <th mat-header-cell *matHeaderCellDef> Telefone</th>
+                <td mat-cell *matCellDef="let Paciente ">{{Paciente.telefone_paciente}}</td>
+            </ng-container>
+            <ng-container matColumnDef="Endereco">
+                <th mat-header-cell *matHeaderCellDef> Endereço</th>
+                <td mat-cell *matCellDef="let Paciente ">{{Paciente.endereco_paciente}}</td>
+            </ng-container>
+            <ng-container matColumnDef="acoes">
+                <th mat-header-cell *matHeaderCellDef></th>
+                <td mat-cell *matCellDef="let Paciente ">
+                    <button mat-stroked-button class="float-right" color="primary" (click) = "openEditDialog(Paciente)"> Editar</button>
+                    <button mat-stroked-button class="float-right" color="primary" (click) = "excluir(Paciente)"> Exluir</button>
+                    <button mat-stroked-button class="float-right" color="primary" (click) = "openNewProntuarioDialog(Paciente)"> Prontuario</button>
+                </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let Paciente; columns: displayedColumns"></tr>
+        </table>    
+    </div>
+</div>

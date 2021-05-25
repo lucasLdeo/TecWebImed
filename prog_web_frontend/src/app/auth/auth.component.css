@@ -1,0 +1,51 @@
+.col-center {
+	margin: 0 auto;
+}
+.login-wrapper {
+    background-color: white;
+	padding: 40px 20px;
+	border: solid 1px #ddd;
+	border-top: solid 5px orangered;
+	border-bottom-width: 2px;
+	border-radius: 3px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.login-wrapper h3 {
+	text-align: center;
+	margin-bottom: 30px;
+	margin-top: -15px;
+	color: #444;
+}
+
+.login-wrapper p {
+	text-align: justify;
+	margin-top: -15px;
+	margin-bottom: 15px;
+}
+
+.login-wrapper .check {
+	display: inline-block;
+  padding-top: 6px;
+}
+
+.login-wrapper input {
+	margin-bottom: 10px
+}
+
+.login-wrapper button {
+	float: right;
+	outline: 0!important;
+}
+
+.login-wrapper footer {
+	margin-top: 20px;
+}
+
+.login-wrapper button:hover {
+	background-color: orangered;
+	color: #fff;
+}

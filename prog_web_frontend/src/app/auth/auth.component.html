@@ -1,0 +1,23 @@
+
+<div class="login-wrapper">
+    <form class="login">
+        <section class="title">
+            <h3 class="welcome">Bem-vindo ao infoMed</h3>            
+            <p class="hint">Utilize seu nome de usuário para acessar o sistema</p>
+        </section>
+        <div class="login-group">
+            <mat-form-field style="width: 100%;">
+                <mat-label>Nome do Usuário</mat-label>
+                <input matInput name="login" [(ngModel)]="login">
+            </mat-form-field>
+            <mat-form-field style="width: 100%;">
+                <mat-label>Senha</mat-label>
+                <input matInput type="password" name="senha" [(ngModel)]="senha">
+            </mat-form-field>            
+            <div class="error active" *ngIf="authInvalido">
+                Nome de usuário ou senha inválidos
+            </div>
+            <button mat-raised-button (click)="auth()">Entrar</button>
+        </div>
+    </form>
+</div>
